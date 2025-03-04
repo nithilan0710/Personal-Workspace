@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"name": "With_I2C",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
