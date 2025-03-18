@@ -9,8 +9,8 @@ const int LOADCELL_DOUT_PIN_2 = 17;
 const int LOADCELL_SCK_PIN_2 = 5;
 const int LOADCELL_DOUT_PIN_3 = 18;
 const int LOADCELL_SCK_PIN_3 = 6;
-const int LOADCELL_DOUT_PIN_4 = 19;
-const int LOADCELL_SCK_PIN_4 = 7;
+// const int LOADCELL_DOUT_PIN_4 = 19;
+// const int LOADCELL_SCK_PIN_4 = 7;
 
 // Create HX711 instances
 HX711 scale1, scale2, scale3, scale4;
@@ -19,7 +19,7 @@ HX711 scale1, scale2, scale3, scale4;
 float calibration_factor_1 = -471.497;  // Example values, update after calibration
 float calibration_factor_2 = -471.497;
 float calibration_factor_3 = -471.497;
-float calibration_factor_4 = -471.497;
+// float calibration_factor_4 = -471.497;
 
 void setup() {
     Serial.begin(115200);
@@ -33,13 +33,13 @@ void setup() {
     scale1.begin(LOADCELL_DOUT_PIN_1, LOADCELL_SCK_PIN_1);
     scale2.begin(LOADCELL_DOUT_PIN_2, LOADCELL_SCK_PIN_2);
     scale3.begin(LOADCELL_DOUT_PIN_3, LOADCELL_SCK_PIN_3);
-    scale4.begin(LOADCELL_DOUT_PIN_4, LOADCELL_SCK_PIN_4);
+    // scale4.begin(LOADCELL_DOUT_PIN_4, LOADCELL_SCK_PIN_4);
 
     // Apply calibration factors
     scale1.set_scale(calibration_factor_1);
     scale2.set_scale(calibration_factor_2);
     scale3.set_scale(calibration_factor_3);
-    scale4.set_scale(calibration_factor_4);
+    // scale4.set_scale(calibration_factor_4);
 
     Serial.println("Load Cells Initialized. Ready to measure weights.");
 }
@@ -50,12 +50,12 @@ void loop() {
     float weight1 = scale1.get_units(10); // Average of 10 readings
     float weight2 = scale2.get_units(10);
     float weight3 = scale3.get_units(10);
-    float weight4 = scale4.get_units(10);
+    // float weight4 = scale4.get_units(10);
 
     Serial.print("Weight 1: "); Serial.print(weight1, 2); Serial.println(" g");
     Serial.print("Weight 2: "); Serial.print(weight2, 2); Serial.println(" g");
     Serial.print("Weight 3: "); Serial.print(weight3, 2); Serial.println(" g");
-    Serial.print("Weight 4: "); Serial.print(weight4, 2); Serial.println(" g");
+    // Serial.print("Weight 4: "); Serial.print(weight4, 2); Serial.println(" g");
 
     Serial.println("------------------------");
     delay(2000); // Delay between readings

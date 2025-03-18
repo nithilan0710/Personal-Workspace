@@ -1,0 +1,12 @@
+
+Load Cell Dout 1 = 25
+Load Cell Dout 2 = 26       
+Load Cell Dout 3 = 27
+Load Cell Dout 4 = 32
+
+Load Cell Clock = 33
+
+Input Button 1 = 36
+Input Button 2 = 39
+Input Button 3 = 34
+Input Button 4 = 35
